@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title> validation </title>
+<style >
+#st{
+text-align:center;
+background-color:lightgrey;
+width:100%;
+min-height:30px;
+line-height:30px;
+}
+</style>
+</head>
+<body>
+<form action="check.html" method="get" onsubmit="return validate()">
+<div id="st">
+Enter the Name:<input type="text" id="tn" name="tname"><span id="stn"></span><br><br>
+Enter the password:<input type="password" id="tp" name="pass"><span id="spass"></span><br><br>
+Enter the ConfirmPassword:<input type="password" id="tc" name="con"><span id="cpass"></span><br><br>
+Choose the Gender:Male<input type="radio" value="m" id="mr"><span id="sg"></span>
+                  Female<input type="radio" value="f" id="fr"><br><br>
+<select id="course" name="coursename">
+<option value="-1">------Select Course---------</option><span id="sc"></span>
+<option value="c">C Language </option>
+<option value="p">Python Language </option>
+<option value="C++">C++ Language </option>
+</select><br><br>
+
+<input type="submit" value:"Click">
+</div>
+</form>
+</body>
+</html>
+
+<script type="text/javascript">
+function validate() {
+    let isTxtname = true;
+
+    if (document.getElementById("tn").value === "") {
+        document.getElementById("stn").innerHTML = "Enter the name";
+        document.getElementById("stn").style.color = "red";
+        isTxtname = false;
+    } else {
+        document.getElementById("stn").innerHTML = "valid";
+        document.getElementById("stn").style.color = "green";
+        isTxtname = true;
+    }
+
+    return isTxtname;
+}
+</script>
